@@ -1,0 +1,25 @@
+name: Echo on Custom Version Tag
+
+on:
+  push:
+    tags:
+      - '*-v*.*.*'     # Matches: release-v1.2.3, app-v2.0.0, hotfix-v1.5.3, etc.
+
+jobs:
+  echo-hi:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Echo Hi Command
+        run: echo "hi"
+
+      - name: Show Tag Name
+        run: echo "🎉 Tag triggered: ${{ github.ref_name }}"
+
+      - name: Show Tag Details
+        run: |
+          echo "Full ref: ${{ github.ref }}"
+          echo "Event: ${{ github.event_name }}"
