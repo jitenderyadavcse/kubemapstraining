@@ -1,0 +1,17 @@
+name: Test Deployment
+
+on:
+  push:
+    tags:
+      - '*-v*.*.*'
+
+jobs:
+  echo-hi:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Echo Hi Command
+        run: echo "hi"
