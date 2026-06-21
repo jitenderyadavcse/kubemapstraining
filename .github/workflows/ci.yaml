@@ -3,7 +3,7 @@ name: Echo on Custom Version Tag
 on:
   push:
     tags:
-      - '*-v*.*.*'     # Matches: release-v1.2.3, app-v2.0.0, hotfix-v1.5.3, etc.
+      - '*-v*.*.*'
 
 jobs:
   echo-hi:
@@ -17,7 +17,7 @@ jobs:
         run: echo "hi"
 
       - name: Show Tag Name
-        run: echo "🎉 Tag triggered: ${{ github.ref_name }}"
+        run: echo "Tag triggered: ${{ github.ref_name }}"
 
       - name: Show Tag Details
         run: |
