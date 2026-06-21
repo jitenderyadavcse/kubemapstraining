@@ -15,11 +15,3 @@ jobs:
 
       - name: Echo Hi Command
         run: echo "hi"
-
-      - name: Show Tag Name
-        run: echo "Tag triggered: ${{ github.ref_name }}"
-
-      - name: Show Tag Details
-        run: |
-          echo "Full ref: ${{ github.ref }}"
-          echo "Event: ${{ github.event_name }}"
