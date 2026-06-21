@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Echo Hi Command
-        run: echo "hi"
+        run: echo "Welcome to the kubemps training"
